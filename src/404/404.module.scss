@@ -1,0 +1,61 @@
+.container {
+  background-color: #0078d7;
+  color: white;
+  font-size: 40px;
+  line-height: 1.5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  overflow: auto;
+  min-height: 100vh;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 4vh 15% 0 20%;
+  p {
+    margin: 0;
+  }
+}
+
+.emoji {
+  font-size: 4em;
+  line-height: 1.25;
+}
+
+.space {
+  height: 0.8em;
+}
+
+.qr {
+  display: flex;
+  flex-direction: row;
+  .img {
+    flex-shrink: 0;
+  }
+  img {
+    display: block;
+    height: 225px;
+    width: 225px;
+  }
+}
+
+.text {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.55em;
+  line-height: 2;
+  .begin {
+    margin-top: -0.5em;
+    a,
+    a:visited {
+      color: white;
+    }
+  }
+
+  .end {
+    margin-bottom: -0.25em;
+  }
+}

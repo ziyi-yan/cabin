@@ -1,0 +1,20 @@
+readmore: Read More
+menu:
+  home: Home
+  tags: Tags
+  archive: Archive
+  about: About me
+sidebar:
+  post: posts
+  tags: tags
+header:
+  createOn: Posted on
+  updateOn: Edited on
+  timeToRead: Reading time %s min
+tags:
+  title: Tags
+  count: '%s tags in total'
+about: about
+tab:
+  toc: Table of Contents
+  site: Overview

@@ -1,0 +1,10 @@
+@import '../consts.scss';
+
+.link {
+  color: $main-color;
+  &:hover {
+    color: $black-dark;
+  }
+
+  @include svg-align;
+}

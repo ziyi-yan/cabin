@@ -1,0 +1,100 @@
+@import '../consts.scss';
+
+.timeline {
+  margin: 0 55px;
+  position: relative;
+  padding: 0;
+  &:before {
+    background: $whitesmoke;
+    content: ' ';
+    display: block;
+    width: 4px;
+    position: absolute;
+    top: 1.25em;
+    bottom: 0;
+    margin-left: -2px;
+  }
+}
+
+@mixin dot($size, $line) {
+  height: $size;
+  width: $size;
+  margin-left: -$size / 2;
+  top: ($line - $size) / 2;
+}
+$title-height: $title-size * $title-line;
+.item {
+  list-style: none;
+  position: relative;
+  h1 {
+    margin: 0 0 0 20px;
+  }
+  &:before {
+    position: absolute;
+    box-sizing: border-box;
+    @include dot(0.5em, 1em * 2);
+    content: ' ';
+    background-color: $grey;
+    border-radius: 50%;
+  }
+  @at-root li#{&}:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.item.title {
+  margin: 60px 0;
+  &:before {
+    @include dot(0.625em, $title-height);
+  }
+}
+
+.post {
+  margin: 0 0 30px;
+  border-bottom: 1px dashed $grey-light;
+  transition: border-bottom-color $transition;
+  &:hover {
+    border-bottom-color: $black-dark;
+  }
+  &:before {
+    border: 1px solid white;
+    transition: background-color $transition;
+  }
+  &:hover::before {
+    background-color: $black-dark;
+  }
+}
+
+.year {
+  margin: 60px 0;
+  &:before {
+    top: -(0.5em - $title-height) / 2;
+  }
+}
+
+.link {
+  display: block;
+}
+
+.time {
+  font-size: 0.875em;
+  margin: 0 10px 0 20px;
+}
+
+.post-title {
+  display: inline;
+  font-size: 1em;
+  margin: 0;
+}
+
+@include mobile {
+  .timeline {
+    margin: 0;
+  }
+}
+
+@include desktop {
+  .post-title {
+    font-size: 1.125em;
+  }
+}

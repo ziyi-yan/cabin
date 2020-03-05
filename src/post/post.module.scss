@@ -1,0 +1,24 @@
+@import '../common/consts.scss';
+
+.article {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  #content {
+    flex-grow: 1;
+  }
+}
+.navigation {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid $gainsboro;
+  font-size: 0.875em;
+  line-height: $title-line;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spacer {
+  width: 10%;
+  flex-shrink: 0;
+}

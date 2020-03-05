@@ -1,0 +1,153 @@
+@import './common/consts.scss';
+
+.content {
+  flex-grow: 1;
+  @mixin page-font {
+    font-size: 1.125rem;
+  }
+
+  #{$second-title} {
+    font-weight: $bold;
+    padding-top: 10px;
+  }
+
+  p {
+    @include page-font();
+    margin: 0 0 20px;
+    max-width: 100%;
+  }
+
+  li {
+    @include page-font();
+  }
+
+  a {
+    @include nav-link;
+  }
+
+  ul,
+  ol {
+    margin: 1em 0;
+    padding-left: 40px;
+  }
+
+  string {
+    font-weight: $bold;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto 20px;
+    border: 1px solid $gray-lighter;
+    max-width: $main-width - $main-padding * 2 - 2px;
+    cursor: zoom-in;
+  }
+
+  table {
+    font-size: 0.875em;
+  }
+
+  blockquote {
+    border-left: 4px solid $grey-light;
+    margin: 0;
+    padding: 0 15px;
+  }
+
+  // for inline code
+  code:not([class]) {
+    background-color: $gainsboro;
+    border-radius: 3px;
+    padding: 2px 4px;
+    word-wrap: break-word;
+  }
+
+  code,
+  code[class*='language-'],
+  pre {
+    font-family: $font-mono;
+    font-size: 0.875rem;
+    font-weight: 400;
+
+    .token.comment {
+      color: #aaa;
+    }
+  }
+
+  hr {
+    margin: 40px 0;
+    border: none;
+    background-color: $black;
+    height: 1px;
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    appearance: none;
+    font-size: inherit;
+    height: 1rem;
+    width: 1rem;
+    box-sizing: border-box;
+    margin: 0;
+    vertical-align: -$font-descent;
+    border: 2px solid $black;
+    &:checked {
+      padding: 2px;
+      background-color: $black;
+      background-clip: content-box;
+    }
+  }
+
+  .footnotes {
+    hr {
+      margin: 30px 0 0;
+      background-color: $gray-lighter;
+    }
+    p {
+      display: inline;
+      margin: 0;
+    }
+  }
+
+  .audio-player,
+  .aplayer {
+    width: 60%;
+    margin: 0 20%;
+  }
+  .complex-player {
+    visibility: hidden;
+    height: 66px;
+  }
+}
+
+@include mobile {
+  .article {
+    p,
+    li {
+      font-size: 1em;
+    }
+  }
+}
+
+.gatsby-highlight pre[class*='language-'].line-numbers {
+  padding-left: 2.8em;
+}
+
+.gatsby-highlight {
+  margin: 20px 0;
+}
+
+.gatsby-highlight pre[class*='language-'].line-numbers {
+  margin: 0;
+  padding-left: 4.5em;
+  // for override line nunber font
+  font-family: $font-mono;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  .line-numbers-rows {
+    padding: 1em;
+    background-color: #1b1b1b;
+    span:before {
+      padding-right: 0;
+    }
+  }
+}

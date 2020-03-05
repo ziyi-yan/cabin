@@ -1,0 +1,63 @@
+@import '../consts.scss';
+
+.header {
+  background: $black-dark;
+  height: 3px;
+}
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+$margin: 12px;
+.container {
+  margin: 0 auto;
+  padding-left: $sidebar-width;
+  width: 100%;
+  max-width: $main-width + ($sidebar-width + $margin) * 2;
+  box-sizing: border-box;
+  display: flex;
+}
+
+@media screen and (max-width: 1400px) {
+  .container {
+    padding-left: 0;
+    max-width: $main-width + $sidebar-width + $margin * 2;
+  }
+}
+
+.main {
+  background: white;
+  flex-grow: 1;
+  margin: 0 $margin;
+  padding: $main-padding;
+  // align with sidebar
+  border-top: $sidebar-title-size * $title-line solid transparent;
+  max-width: $main-width;
+  min-height: 650px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+  color: $grey-dark;
+  font-size: 0.875em;
+  @include svg-align;
+  svg {
+    margin: 0 5px;
+  }
+}
+
+@include mobile {
+  .main {
+    border-top: none;
+    margin: 0;
+    padding: $main-padding / 2;
+  }
+}
+

@@ -1,0 +1,37 @@
+@import '../common/consts.scss';
+
+.post {
+  padding: 60px 0 80px;
+  border-bottom: $grey-light solid 1px;
+  p,
+  footer {
+    text-align: center;
+  }
+  blockquote p {
+    text-align: left;
+  }
+  @at-root section#{&}:first-of-type {
+    padding-top: 0;
+  }
+}
+
+.link-container {
+  margin-top: 40px;
+
+  .read-more {
+    display: inline-block;
+    border: 2px solid $main-color;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-weight: bolder;
+    transition: background-color $transition;
+  }
+
+  @include desktop {
+    .read-more:hover {
+      border-color: $black-dark;
+      background-color: $black-dark;
+      color: white;
+    }
+  }
+}

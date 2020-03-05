@@ -1,0 +1,51 @@
+@import '../consts.scss';
+
+.header {
+  margin-bottom: 60px;
+  text-align: center;
+  h1 {
+    margin: 0;
+    a {
+      position: relative;
+      line-height: 1.2;
+    }
+    @include desktop {
+      a:after {
+        position: absolute;
+        left: 0;
+        bottom: $font-descent;
+        content: '';
+        background-color: black;
+        height: 2px;
+        width: 100%;
+        transform: scaleX(0);
+        transition: transform $transition;
+      }
+      a:hover::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.stat {
+  margin-top: 3px;
+  color: $grey-dark;
+  font-size: 0.875em;
+  @include svg-align {
+    margin-right: 3px;
+  }
+  time {
+    border-bottom: 1px dashed $grey-dark;
+  }
+}
+
+.line {
+  background-color: $grey-dark;
+  font-size: 0.875em;
+  display: inline-block;
+  margin: 0 0.5em;
+  width: 1px;
+  height: 1em;
+  vertical-align: middle;
+}
