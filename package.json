@@ -27,6 +27,7 @@
     "gatsby-source-filesystem": "^2.1.26",
     "gatsby-transformer-remark": "^2.6.24",
     "gatsby-transformer-sharp": "^2.2.19",
+    "gh-pages": "^2.2.0",
     "github-slugger": "^1.2.1",
     "preact": "^10.1.0",
     "prismjs": "^1.17.1",
@@ -55,7 +56,7 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "deploy": "ts-node -T scripts/deploy.ts",
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/ziyi-yan/ziyi-yan.github.io",
     "serve": "gatsby serve",
     "new": "ts-node -T scripts/new.ts"
   },
