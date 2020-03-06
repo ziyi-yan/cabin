@@ -6,9 +6,16 @@
     font-size: 1.125rem;
   }
 
+  $title-padding: 10px;
   #{$second-title} {
     font-weight: $bold;
-    padding-top: 10px;
+    padding-top: $title-padding;
+    .anchor svg {
+      visibility: hidden;
+    }
+    &:hover .anchor svg {
+      visibility: visible;
+    }
   }
 
   p {
@@ -23,6 +30,15 @@
 
   a {
     @include nav-link;
+    &.anchor {
+      padding-top: $title-padding;
+      border-bottom: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
   }
 
   ul,
